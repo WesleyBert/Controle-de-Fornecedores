@@ -1,0 +1,38 @@
+﻿@model FornecedorModel
+@{
+    ViewData["Title"] = "Editar Listagem de Fornecedores";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">cadastrar Fornecedor</h1>
+
+</div>
+
+<form asp-controller="Fornecedor" asp-action="Alterar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="digite o nome do fornecedor">
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <div class="form-group">
+        <label for="nome">CNPJ</label>
+        <input type="text" asp-for="CNPJ" class="form-control" placeholder="digite o CPJ do fornecedor">
+        @Html.ValidationMessageFor(x => x.CNPJ)
+    </div>
+    <div class="form-group">
+        <label for="Especialidade">Especialidadelabel </label>
+        <select type="text" asp-for="Especialidade" class="form-control" placeholder="digite o Especialidade do fornecedor">
+            <option value="">Escolha a Especialidader</option>
+            <option value="Comércio">Comércio</option>
+            <option value="Serviço">Serviço</option>
+            <option value="Indústria">Indústria</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Especialidade)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Alterar</button>
+    <a class="btn btn-secondary" asp-controller="Fornecedor" asp-action="Index" role="button">Voltar</a>
+    <br/>
+</form>
